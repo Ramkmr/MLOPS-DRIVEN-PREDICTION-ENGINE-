@@ -2,7 +2,8 @@ from mlProject.constants import *
 from mlProject.utils.common import read_yaml, create_directories
 from mlProject.entity.config_entity import (DataIngestionConfig,
                                             DataValidationConfig,
-                                            DataTransformationConfig)
+                                            DataTransformationConfig,
+                                            ModelTrainerConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -65,7 +66,7 @@ class ConfigurationManager:
     
 
 
-    """def get_model_trainer_config(self) -> ModelTrainerConfig:
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
         params = self.params.ElasticNet
         schema =  self.schema.TARGET_COLUMN
@@ -87,7 +88,7 @@ class ConfigurationManager:
     
 
 
-    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+    """def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
         params = self.params.ElasticNet
         schema =  self.schema.TARGET_COLUMN
